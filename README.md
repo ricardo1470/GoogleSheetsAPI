@@ -8,7 +8,12 @@
 this project was built in: `Nodejs`, `ejs`, `Express`, `GoogleAPI`
 ---
 > ## Test with Google API Sheets
-> [GoogleSheets](https://docs.google.com/spreadsheets/d/1IwI4STY9b5Q5rglBCSQSmJc8rGexfYQvyzdXai-B7i0/edit#gid=0)
+[GoogleSheets](https://docs.google.com/spreadsheets/d/1IwI4STY9b5Q5rglBCSQSmJc8rGexfYQvyzdXai-B7i0/edit#gid=0)
+---
+> ## Deploy with Heroku
+[GoogleSheetsAPI](https://test-googlesheetsapi.herokuapp.com/)
+---
+> ## API under construction
 
 ---
 > ## Expressions of Gratitude
