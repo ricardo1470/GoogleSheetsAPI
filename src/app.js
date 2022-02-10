@@ -4,6 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const createError = require('http-errors');
 const favicon = require('serve-favicon');
+//require('./index');
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')));
 
 app.use('/', routes);
@@ -38,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 });*/
 
 // error handler
-app.use(function(err, req, res) {
+/*app.use(function(err, req, res) {
     //set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -46,7 +47,7 @@ app.use(function(err, req, res) {
     // render the error page
     res.status(err.status || 500);
     res.render('error.html');
-});
+});*/
 
 // listen server on port
 app.listen(port, () => {
