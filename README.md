@@ -16,6 +16,9 @@
 > ## API under construction
 
 ---
+> ## fix
+* Error: error:0909006C:PEM routines:get_name:no start line
+* how to solve:
 > ## Expressions of Gratitude
 ---
 * `Tell others about this project`

@@ -3,6 +3,9 @@ const readline = require("readline");
 const { google } = require("googleapis");
 let { OAuth2Client } = require('google-auth-library');
 
+const { getDotEnv } = require('./credentials')
+
+console.log(getDotEnv)
 const getApi = async (req, res, next) => {
     // create OAuth2 client
     const auth = new google.auth.GoogleAuth({
@@ -39,15 +42,12 @@ const getApi = async (req, res, next) => {
         valueInputOption: 'USER_ENTERED',
         resource: {
             values: [
-                ['Alexandra', 'Female',	'4.Senior',	'CA', 'English', 'Drama Club'],
-                ['Carlos', 'male',	'1.Senior',	'ND', 'English', 'Debate'],
-                ['Julia', 'Female',	'2.Senior',	'WI', 'English', 'Tennis'],
+                ['Nicolas', 'male',	'3.Senior',	'WI', 'Spanish', 'Tennis'],
             ]
         }
     });
 
     res.send(getRows.data);
-    console.log(getRows.data);
 
     next();
 };

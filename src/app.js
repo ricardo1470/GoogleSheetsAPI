@@ -2,9 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
-const createError = require('http-errors');
+let createError = require('http-errors');
 const favicon = require('serve-favicon');
-//require('./index');
+require('dotenv').config({ path: path.join(__dirname, './.env') });
 
 const app = express();
 
@@ -26,20 +26,24 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')));
+//const pv_KEY = process.env.PRIVATE_KEY.replace(/\\n/g, "\n")
 
+
+// routes
 app.use('/', routes);
 app.use('/api', routeApi);
 
+// static files
 app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
-/*app.use(function(req, res, next) {
+app.use(function(req, res, next) {
     next(createError(404));
     res.render('error.html');
-});*/
+});
 
 // error handler
-/*app.use(function(err, req, res) {
+app.use(function(err, req, res) {
     //set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -47,7 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
     // render the error page
     res.status(err.status || 500);
     res.render('error.html');
-});*/
+});
 
 // listen server on port
 app.listen(port, () => {
