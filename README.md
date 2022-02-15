@@ -12,6 +12,7 @@
 ---
 > ## Deploy with Heroku
 * [GoogleSheetsAPI](https://test-googlesheetsapi.herokuapp.com/)
+* [SheetsAPI](https://test-googlesheetsapi.herokuapp.com/api/googleAPI)
 ---
 > ## API under construction
 
